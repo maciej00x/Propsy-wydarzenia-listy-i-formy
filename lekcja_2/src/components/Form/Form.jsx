@@ -29,7 +29,8 @@ const Form = () => {
     };
 
     if (validateForm(formData)) {
-      console.log("mamy nasze dane!");
+      //console.log("mamy nasze dane!");
+      fetch("API", { method: "POST", body: formData });
     } else {
       alert("Proszę wypełnic wszystkie pola!");
     }

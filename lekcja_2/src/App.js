@@ -8,6 +8,10 @@ function App() {
         <h2>Wprowadź swoje dane:</h2>
         <Form />
       </section>
+      <section className={styles.section}>
+        <h2>Dodaj jeden:</h2>
+        {/*<Form />*/}
+      </section>
     </div>
   );
 }
