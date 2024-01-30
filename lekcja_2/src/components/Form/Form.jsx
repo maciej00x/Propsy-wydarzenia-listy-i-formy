@@ -1,19 +1,62 @@
 import styles from "./Form.module.scss";
 
 const Form = () => {
-  const handleNameChange = (e) => {
-    console.log(e.target.value);
+  //const handleNameChange = (e) => {
+  //  console.log(e.target.value);
+  // };
+
+  const validateForm = (formData) => {
+    if (!formData.name) {
+      return false;
+    }
+
+    return true;
   };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+
+    //console.log(e.currentTarget.elements);
+
+    const { name, lastName, gender } = e.currentTarget.elements;
+
+    //console.log(name.value);
+
+    const formData = {
+      name: name.value,
+      lastName: lastName.value,
+      gender: gender.value,
+    };
+
+    if (validateForm(formData)) {
+      console.log("mamy nasze dane!");
+    } else {
+      alert("Proszę wypełnic wszystkie pola!");
+    }
+
+    console.log(formData);
+  };
+
   return (
-    <form className={styles.form}>
+    <form onSubmit={handleFormSubmit} className={styles.form}>
       <div className={styles.formGroup}>
         <label htmlFor="name">Name:</label>
-        <input onChange={handleNameChange} type="text" name="name" />
+        {/*<input onChange={handleNameChange} type="text" name="name" />*/}
+        <input type="text" id="name" name="name" />
       </div>
       <div className={styles.formGroup}>
         <label htmlFor="lastName">Last name:</label>
-        <input type="text" name="lastName" />
+        <input type="text" id="lastName" name="lastName" />
       </div>
+      <div className={styles.formGroup}>
+        <label htmlFor="gender">Your Gender:</label>
+        <select name="gender" id="gender">
+          <option value="M">Male</option>
+          <option value="F">Female</option>
+          <option value="O">Other</option>
+        </select>
+      </div>
+      <button type="submit">Wyślij</button>
     </form>
   );
 };
