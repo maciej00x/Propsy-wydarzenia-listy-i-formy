@@ -1,9 +1,18 @@
 import styles from "./Form.module.scss";
 
-const Form = () => {
+{
+  /*import FormInput from "./FormInput/FormInput";*/
+}
+
+const Form = ({ getFormData }) => {
   //const handleNameChange = (e) => {
   //  console.log(e.target.value);
   // };
+
+  {
+    /* const Form = ({ user }) => {
+   };console.log("form", user);*/
+  }
 
   const validateForm = (formData) => {
     if (!formData.name) {
@@ -29,8 +38,10 @@ const Form = () => {
     };
 
     if (validateForm(formData)) {
+      getFormData(formData);
+
       //console.log("mamy nasze dane!");
-      fetch("API", { method: "POST", body: formData });
+      //fetch("API", { method: "POST", body: formData });
     } else {
       alert("Proszę wypełnic wszystkie pola!");
     }
