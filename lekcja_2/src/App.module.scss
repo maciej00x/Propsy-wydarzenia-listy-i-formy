@@ -6,6 +6,10 @@
   background-color: azure;
   border-radius: 10px;
 
-  box-shadow:  14px 14px 28px #9f9f9f,
-             -14px -14px 28px #ffffff;
+  box-shadow: 14px 14px 28px #9f9f9f, -14px -14px 28px #ffffff;
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
 }

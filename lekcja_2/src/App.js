@@ -1,5 +1,7 @@
 import styles from "./App.module.scss";
+import Counter from "./components/Counter/Counter";
 import Form from "./components/Form/Form";
+import { FaSmileWink } from "react-icons/fa";
 
 function App() {
   return (
@@ -9,7 +11,11 @@ function App() {
         <Form />
       </section>
       <section className={styles.section}>
-        <h2>Dodaj jeden:</h2>
+        <h2>
+          Dodaj jeden
+          <FaSmileWink />:
+        </h2>
+        <Counter />
         {/*<Form />*/}
       </section>
     </div>
