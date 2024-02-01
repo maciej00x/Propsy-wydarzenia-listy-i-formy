@@ -1,2 +1,2 @@
-# Propsy-wydarzenia-listy-i-formy
+# propsy-wydarzenia-listy-i-formy
 React 
