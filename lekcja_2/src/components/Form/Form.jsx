@@ -1,10 +1,11 @@
 import styles from "./Form.module.scss";
+import { nanoid } from "nanoid";
 
 {
   /*import FormInput from "./FormInput/FormInput";*/
 }
 
-const Form = ({ getFormData }) => {
+const Form = ({ addUser }) => {
   //const handleNameChange = (e) => {
   //  console.log(e.target.value);
   // };
@@ -32,13 +33,14 @@ const Form = ({ getFormData }) => {
     //console.log(name.value);
 
     const formData = {
+      id: nanoid(),
       name: name.value,
       lastName: lastName.value,
       gender: gender.value,
     };
 
     if (validateForm(formData)) {
-      getFormData(formData);
+      addUser(formData);
 
       //console.log("mamy nasze dane!");
       //fetch("API", { method: "POST", body: formData });
